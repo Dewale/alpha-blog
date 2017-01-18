@@ -1,1 +1,3 @@
+==README
+
 This is the repository for the first web application I made using the Rails framework.
