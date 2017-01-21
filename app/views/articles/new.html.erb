@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title> About </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+       
+    <body>
+        <div class='jumbotron'>
+            <div class='container'>
+                <h1>Create an article</h1>
+            </div>
+        </div>
+        
+        <%= form_for @article do |f| %>
+            <p>
+                <%= f.label :title %><br/>
+                <%= f.text_field :title %>
+            </p>
+            <p>
+                <%= f.label :description %><br/>
+                <%= f.text_area :description %>
+            </p>
+            <p>
+                <%= f.submit %>
+            </p>
+        
+        <% end %>
+    </body>
+</html>
