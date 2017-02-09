@@ -17,7 +17,9 @@ class ArticlesController < ApplicationController
         #article_params e.g title: "Title of article", description: "Title description"
         #article.save returns a boolean, depending on the validations set up in the model
         #Notify the user and redirect to show path See rake routes
+        debugger
         @article = Article.new(article_params)
+        @article.user = User.first
         if @article.save
             flash[:success] = "Article was successfully saved"
             redirect_to article_path(@article)
