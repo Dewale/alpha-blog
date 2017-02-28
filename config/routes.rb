@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   #Gives you access to the enitre scaffold 
   resources :articles
   
+  get 'signup' => 'users#new'
+  resources :users, except: [:new]
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
