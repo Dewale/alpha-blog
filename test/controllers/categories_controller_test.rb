@@ -3,7 +3,9 @@ require 'test_helper'
 class CategoriesControllerTest < ActionController::TestCase
     
     def setup
-       @category = Category.create(name: 'sports') 
+       @category = Category.create(name: 'sports')
+       @user = User.create(username: 'Wale', email: 'walekoya125@gmail.com',
+                            password: 'password', admin: true)
     end
    test 'should get categories index' do
       get :index 
@@ -11,6 +13,7 @@ class CategoriesControllerTest < ActionController::TestCase
    end
    
    test 'should get new' do
+       session[:user_id] = @user.id
        get :new
        assert_response :success
    end
@@ -20,5 +23,11 @@ class CategoriesControllerTest < ActionController::TestCase
        assert_response :success
    end
    
+   test 'should redirect create when admin not logged in' do
+        assert_no_difference "Category.count" do
+            post :create, category: {name: 'sports'}
+        end
+        assert_redirected_to categories_path
+   end
     
 end
