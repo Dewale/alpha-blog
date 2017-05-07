@@ -12,14 +12,10 @@ class ArticlesController < ApplicationController
     end
     
     def edit
+        
     end
     
     def create
-        #Creating a new article
-        #article_params e.g title: "Title of article", description: "Title description"
-        #article.save returns a boolean, depending on the validations set up in the model
-        #Notify the user and redirect to show path See rake routes
-      #  debugger
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
@@ -54,7 +50,7 @@ class ArticlesController < ApplicationController
     end
     
     def article_params
-       params.require(:article).permit(:title,:description) 
+       params.require(:article).permit(:title,:description, category_ids: []) 
     end
     
     def require_same_user
