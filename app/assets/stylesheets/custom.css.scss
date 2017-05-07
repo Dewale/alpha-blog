@@ -22,7 +22,7 @@ $navbar-default-bg: #0f0f0f;
 }
 
 .jumbotron{
-    background-image: asset-url('Blog.jpg');
+    background-image: asset-url('Photo.jpg');
     background-size: cover;
     height: 550px;
 }
@@ -35,9 +35,11 @@ $navbar-default-bg: #0f0f0f;
 }
 .btn-xlarge{
     font-size: 1.7em;
-    background-color: black;
+    background-color: #0F0F0F;
 }
-
+.homepage{
+    background-color: #0f0f0f;
+}
 .article-actions{
     border-top: 1px solid #eaeaea;
     padding-top: 5px;
